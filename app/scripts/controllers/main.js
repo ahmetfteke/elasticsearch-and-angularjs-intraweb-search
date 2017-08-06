@@ -26,4 +26,10 @@ angular.module('searchEngineApp')
     }
     ];
     $scope.movies = movies;
+  })
+  .controller('SubCtrl', function($scope) {
+    $scope.title = 'Availave to watch: ' + $scope.movies.length + ' movies.';
+  })
+  .controller('FormCtrl', function($scope){
+
   });

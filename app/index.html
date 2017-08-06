@@ -50,11 +50,19 @@
 
     <div class="container">
     <div ng-controller="MainCtrl">
+      <div ng-controller = "SubCtrl">
+        <h1 ng-bind="title"></h1>
+      </div>
       <div ng-repeat="movie in movies" style="float: left">
         <h3 ng-bind="movie.title"></h3>
         <img src="{{movie.image}}" alt="" style="float: left">
         <div ng-bind="movie.description"></div>
       </div>
+    </div>
+
+    <div ng-controller="FormCtrl">
+      Title: <input type="text" name="title">
+
     </div>
     </div>
 

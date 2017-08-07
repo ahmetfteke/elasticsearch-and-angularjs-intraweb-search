@@ -26,27 +26,25 @@ angular.module('searchEngineApp')
     }
     ];
     $scope.movies = movies;
-    $scope.newMovieTitle = '';
-    $scope.newMovieImage = '';
-    $scope.newMovieDescription = '';
+
+    $scope.movie = {
+      title: '',
+      image: '',
+      description: '',
+      category: ''
+    };
 
     $scope.validateTitle = function(){
-      if($scope.newMovieTitle.length > 0){
+      if($scope.movie.title.length > 0){
 
       }
     };
     $scope.addMovie = function(){
-      var movie = {
-        title: $scope.newMovieTitle,
-        category: $scope.newMovieCategory,
-        image: $scope.newMovieImage,
-        description: $scope.newMovieDescription
-      };
-      $scope.movies.push(movie);
+      $scope.movies.push(angular.copy($scope.movie));
     };
 
     $scope.checkCategorySelected = function(){
-      if($scope.newMovieCategory == ''){
+      if($scope.movie.category === ''){
         window.alert('Category cannot be empty');
       }
     };

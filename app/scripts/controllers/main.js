@@ -25,6 +25,7 @@ angular.module('searchEngineApp')
       description: 'An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.'
     }
     ];
+    $scope.closed = false;
     $scope.movies = movies;
 
     $scope.movie = {
@@ -48,6 +49,18 @@ angular.module('searchEngineApp')
         window.alert('Category cannot be empty');
       }
     };
+
+    $scope.isValid = function() {
+      if ($scope.movie.title === ''){
+        return false;
+      }
+      if ($scope.movie.description === ''){
+        return false;
+      }
+      if ($scope.movie.category === ''){
+        return false;
+      }
+    }
 
   })
   .controller('SubCtrl', function($scope) {

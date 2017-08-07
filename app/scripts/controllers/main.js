@@ -26,6 +26,31 @@ angular.module('searchEngineApp')
     }
     ];
     $scope.movies = movies;
+    $scope.newMovieTitle = '';
+    $scope.newMovieImage = '';
+    $scope.newMovieDescription = '';
+
+    $scope.validateTitle = function(){
+      if($scope.newMovieTitle.length > 0){
+
+      }
+    };
+    $scope.addMovie = function(){
+      var movie = {
+        title: $scope.newMovieTitle,
+        category: $scope.newMovieCategory,
+        image: $scope.newMovieImage,
+        description: $scope.newMovieDescription
+      };
+      $scope.movies.push(movie);
+    };
+
+    $scope.checkCategorySelected = function(){
+      if($scope.newMovieCategory == ''){
+        window.alert('Category cannot be empty');
+      }
+    };
+
   })
   .controller('SubCtrl', function($scope) {
     $scope.title = 'Availave to watch: ' + $scope.movies.length + ' movies.';

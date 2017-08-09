@@ -29,7 +29,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/movie', {
+      .when('/movie/:id/:slug', {
         templateUrl: 'views/singlemovie.html',
         controller: 'MovieCtrl'
       })

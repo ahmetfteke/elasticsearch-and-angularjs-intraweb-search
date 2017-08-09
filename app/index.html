@@ -49,57 +49,15 @@
     </div>
 
     <div class="container">
-    <div ng-controller="MainCtrl" class="row">
-      <div class="col-xs-7">
-      <h2>Movies</h2>
-      <div ng-controller = "SubCtrl">
-        <h4 ng-bind="title"></h1>
-      </div>
-      <div ng-repeat="movie in movies" style="clear: both;  margin-bottom: 80px;">
-        <h3 ng-bind="movie.title"></h3>
-        <img src="{{movie.image}}" alt="" style="float: left; width: 80px; margin-right: 10px;">
-        <div ng-bind="movie.description"></div>
-      </div>
-      </div>
-      <div class="col-xs-1">
-        <span class="glyphicon glyphicon-menu-right" ng-show="closed" ng-click="closed=false"></span>
-        <span class="glyphicon glyphicon-menu-down" ng-hide="closed" ng-click="closed=true"></span>
-      </div>
-      <div class="col-xs-4" ng-hide="closed">
-        <h2>Add</h2>
-        <div class="form-group">
-          <label>Title</label>
-          <input class="form-control" placeholder="Enter title" ng-keyup="validateTitle()" ng-model="movie.title">
-        </div>
-        <div class="form-group">
-          <label>Image</label>
-          <input class="form-control" placeholder="Image" ng-model="movie.image">
-          <div ng-show="movie.image.length > 7">
-            <h4>Preview</h4>
-            <img ng-src="{{movie.image}}" alt="">
-          </div>
-          <div class="form-group">
-            <label>Category</label>
-            <select class="form-control" ng-change="checkCategorySelected()" ng-model="movie.category">
-              <option value=""></option>
-              <option value="Epic">Epic</option>
-              <option value="Awesome">Awesome</option>
-              <option value="Average">Average</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Description</label>
-            <textarea class="form-control" ng-blur="checkDescription()" ng-model="movie.description"></textarea>
-          </div>
-          <button class="btn btn-info" type="button" ng-click="addMovie()" ng-show="isValid()">Add</button>
-        </div>
-      </div>
-    </div>
+
 
     <!-- <div ng-controller="FormCtrl">
       Title: <input type="text" name="title">
 
     </div> -->
+    <div ng-view="">
+
+    </div>
     </div>
 
     <div class="footer">
@@ -138,6 +96,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/movie.js"></script>
+        <script src="scripts/controllers/contact.js"></script>
         <!-- endbuild -->
 </body>
 </html>

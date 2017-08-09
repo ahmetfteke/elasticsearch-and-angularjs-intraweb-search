@@ -60,7 +60,7 @@ angular.module('searchEngineApp')
       if ($scope.movie.category === ''){
         return false;
       }
-    }
+    };
 
   })
   .controller('SubCtrl', function($scope) {
